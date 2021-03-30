@@ -1,150 +1,71 @@
-# E-commerce Back End Starter Code
+[![License: Open Data Commons Attribution](https://img.shields.io/badge/License-ODC_BY-brightgreen.svg)](https://opendatacommons.org/licenses/by/)
 
-User Story
-AS A manager at an internet retail company
-I WANT a back end for my e-commerce website that uses the latest technologies
-SO THAT my company can compete with other e-commerce companies
+# E-Commerce BackEnd
 
-Acceptance Criteria
-GIVEN a functional Express.js API
-WHEN I add my database name, MySQL username, and MySQL password to an environment variable file
-THEN I am able to connect to a database using Sequelize
-WHEN I enter schema and seed commands
-THEN a development database is created and is seeded with test data
-WHEN I enter the command to invoke the application
-THEN my server is started and the Sequelize models are synced to the MySQL database
-WHEN I open API GET routes in Insomnia Core for categories, products, or tags
-THEN the data for each of these routes is displayed in a formatted JSON
-WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
-THEN I am able to successfully create, update, and delete data in my database
+## Week 13 Challenge
 
-Database Models
-Your database should contain the following four models, including the requirements listed for each model:
+### Victor McGuire
 
-Category
+## Table of Contents
 
-    id
+1. [Description](#Description)
+2. [Installation Instructions](#Installation-Instructions)
+3. [Usage Instructions](#Usage-Instructions)
+4. [Contribution Guidelines](#Contribution-Guidelines)
+5. [Test Instructions](#Test-Instructions)
+6. [Questions](#Questions)
+7. [License](#License)
 
-        Integer
+## Description
 
-        Doesn't allow null values
+The purpose of this project is to create backend for an ecommerce website to organizing and manipulating via CRUD data having to do with products, their categories, and product tags.
 
-        Set as primary key
+## Installation Instructions
 
-        Uses auto increment
+Access the application by accessing it here and downloading the files: https://github.com/vmcguire/e-commerce
 
-    category_name
+You will also need express, MySQL2, node_modules, and the dotenv package to make this work.
 
-        String
+## Usage Instructions
 
-        Doesn't allow null values
+Demonstration video of usage is here: https://drive.google.com/file/d/1kdn-soAKR_v1Hhho5F9xgzCM-crKr-ty/view
 
-Product
+Navigate to the root folder of the application where the server.js file sits.
 
-    id
+To create the data base, you can source the schema.sql file by changing the sequelize sync force value to 'true' in the server.js file, and running the server by 'npm start' in the command line of the root folder (as seen in the screen shot below).
 
-        Integer
+![screenshot](assets/images/2.png)
 
-        Doesn't allow null values
+To seed the data, in the command line excute the command 'npm run seed'.
 
-        Set as primary key
+To start the server, execute in the command line, npm start.
 
-        Uses auto increment
+### Screen Shots Below:
 
-    product_name
+### 1. Here is the opening screen of the video. Please select the video in the Usage Instructions
 
-        String
+![screenshot](assets/images/1.png)
 
-        Doesn't allow null values
+## Contribution Guidelines
 
-    price
+Feel free to contribute and mark your contributions.
 
-        Decimal
+## Test Instructions
 
-        Doesn't allow null values
+Feel free to test using Insomnia as the screen shots show below.
 
-        Validates that the value is a decimal
+![screenshot](assets/images/3.png)
+![screenshot](assets/images/4.png)
+![screenshot](assets/images/5.png)
+![screenshot](assets/images/6.png)
+![screenshot](assets/images/7.png)
+![screenshot](assets/images/8.png)
+![screenshot](assets/images/9.png)
+![screenshot](assets/images/10.png)
+![screenshot](assets/images/11.png)
 
-    stock
+## Questions
 
-        Integer
+Please visit my repo here for any further questions: <https://github.com/vmcguire>
 
-        Doesn't allow null values
-
-        Set a default value of 10
-
-        Validates that the value is numeric
-
-    category_id
-
-        Integer
-
-        References the category model's id
-
-Tag
-
-    id
-
-        Integer
-
-        Doesn't allow null values
-
-        Set as primary key
-
-        Uses auto increment
-
-    tag_name
-
-        String
-
-ProductTag
-
-    id
-
-        Integer
-
-        Doesn't allow null values
-
-        Set as primary key
-
-        Uses auto increment
-
-    product_id
-
-        Integer
-
-        References the product model's id
-
-    tag_id
-
-        Integer
-
-        References the tag model's id
-
-Associations
-
-You'll need to execute association methods on your Sequelize models to create the following relationships between them:
-
-    Product belongs to Category, as a category can have multiple products but a product can only belong to one category.
-
-    Category has many Product models.
-
-    Product belongs to many Tag models. Using the ProductTag through model, allow products to have multiple tags and tags to have many products.
-
-    Tag belongs to many Product models.
-
-HINT
-
-Fill Out the API Routes to Perform RESTful CRUD Operations
-
-Fill out the unfinished routes in product-routes.js, tag-routes.js, and category-routes.js to perform create, read, update, and delete operations using your Sequelize models.
-
-NOTE
-The functionality for creating the many-to-many relationship for products is already done for you.
-
-HINT
-Seed the Database
-After creating the models and routes, run npm run seed to seed data to your database so that you can test your routes.
-
-Sync Sequelize to the Database on Server Start
-Create the code needed in server.js to sync the Sequelize models to the MySQL database on server start.
+My email address is: <victor.mcguire@gmail.com>
